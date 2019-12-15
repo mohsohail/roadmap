@@ -4,6 +4,7 @@ const port = process.env.PORT || 8000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const io = require('socket.io')();
 
 const apiRoutes = require('./routes/api.route');
 
@@ -32,3 +33,15 @@ app.use((error, req, res, next) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+// socket
+io.on('connection', clientSocket => {
+  clientSocket.on('subscribeToTimer', interval => {
+    setInterval(() => {
+      clientSocket.emit('timer', new Date());
+    }, interval);
+  });
+});
+
+const socketPort = 8001;
+io.listen(socketPort);
