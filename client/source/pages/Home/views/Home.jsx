@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
-import Header from '../../../components/Header/Header';
+import Top from '../../../components/Top/Top';
+import Body from '../../../components/Body/Body';
+import Bottom from '../../../components/Bottom/Bottom';
 
 class Home extends Component {
   constructor(props) {
@@ -9,10 +10,17 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
-        {/* <Header /> */}
-        <Search></Search>
-      </div>
+      <>
+        <div>
+          <Top></Top>
+        </div>
+        <div>
+          <Body></Body>
+        </div>
+        <div>
+          <Bottom></Bottom>
+        </div>
+      </>
     );
   }
 }
