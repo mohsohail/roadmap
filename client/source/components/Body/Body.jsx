@@ -1,11 +1,16 @@
 import React from 'react';
-import Skill from '../Skill/Skill';
+import SkillCard from '../SkillCard/SkillCard';
 
-const Body = () => {
+const Body = props => {
   return (
-    <div>
-      <Skill></Skill>
-    </div>
+    <>
+      <div>
+        <SkillCard name={'react'} />
+      </div>
+      <div>
+        <SkillCard name={'redux'} />
+      </div>
+    </>
   );
 };
 

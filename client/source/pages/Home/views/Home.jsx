@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Top from '../../../components/Top/Top';
-import Body from '../../../components/Body/Body';
-import Bottom from '../../../components/Bottom/Bottom';
-
+import Header from '../../../components/Header/Header';
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -11,15 +8,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <div>
-          <Top></Top>
-        </div>
-        <div>
-          <Body></Body>
-        </div>
-        <div>
-          <Bottom></Bottom>
-        </div>
+        <Header />
       </>
     );
   }
