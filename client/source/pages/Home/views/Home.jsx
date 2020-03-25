@@ -10,8 +10,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <div>Home Page</div>
+        {/* <Header /> */}
+        <Search></Search>
       </div>
     );
   }

@@ -15,7 +15,6 @@ class HomePage extends Component {
     return (
       <div>
         <Home {...this.props} />
-        <button onClick={this.handleFooClick}>click me</button>
       </div>
     );
   }

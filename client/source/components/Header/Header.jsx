@@ -8,12 +8,6 @@ const Header = props => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/explore">Explore</Link>
-        </li>
-        <li>
-          <Link to="/checkout">Checkout</Link>
-        </li>
       </ul>
     </nav>
   );

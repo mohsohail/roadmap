@@ -5,9 +5,6 @@ import Routes from './routes';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      timeStamp: 'no timeStamp yet'
-    };
   }
   render() {
     return <div>{renderRoutes(Routes)}</div>;
