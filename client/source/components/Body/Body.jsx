@@ -3,14 +3,7 @@ import SkillCard from '../SkillCard/SkillCard';
 
 const Body = props => {
   return (
-    <>
-      <div>
-        <SkillCard name={'react'} />
-      </div>
-      <div>
-        <SkillCard name={'redux'} />
-      </div>
-    </>
+    <div></div>
   );
 };
 

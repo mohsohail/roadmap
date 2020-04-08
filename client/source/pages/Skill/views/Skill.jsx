@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Top from '../../../components/Top/Top';
-import Body from '../../../components/Body/Body';
-import Bottom from '../../../components/Bottom/Bottom';
+
+import SkillCard from '../../../components/SkillCard/SkillCard';
 
 class Skill extends Component {
   constructor(props) {
@@ -14,12 +14,14 @@ class Skill extends Component {
         <div>
           <Top></Top>
         </div>
-        <div>
-          <Body></Body>
-        </div>
-        <div>
-          <Bottom></Bottom>
-        </div>
+        <>
+          <div>
+            <SkillCard name={'react'} />
+          </div>
+          <div>
+            <SkillCard name={'redux'} />
+          </div>
+        </>
       </>
     );
   }
