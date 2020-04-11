@@ -1,0 +1,16 @@
+import { FETCH_SKILLS } from '../constants/endpoints';
+import { callAPI } from '../utils/api.utils';
+
+export const processFetchSkills = async () => {
+  const request = {
+    url: 'http://localhost:8000' + FETCH_SKILLS,
+    method: 'get',
+    headers: {},
+  };
+  const response = await callAPI(request);
+  if (!response.error) {
+    return response;
+  } else {
+    return { error: true };
+  }
+};
