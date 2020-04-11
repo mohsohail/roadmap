@@ -6,21 +6,21 @@ const SkillSchema = new Schema({
     type: String,
     required: true,
   },
-  sessions: {
+  trackerType: {
     type: String,
     required: true,
+  },
+  sessions: {
+    type: String,
   },
   currentSession: {
     type: String,
-    required: true,
   },
   endDate: {
     type: String,
-    required: true,
   },
   currentDate: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,

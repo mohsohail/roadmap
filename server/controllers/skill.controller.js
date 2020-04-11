@@ -2,11 +2,7 @@ const skillService = require('../services/skill.service');
 
 const createSkill = async (req, res) => {
   try {
-    let payload = {
-      // _id: new mongoose.Types.ObjectId(),
-      ...req.body,
-    };
-    const response = await skillService.createSkill(payload);
+    const response = await skillService.createSkill(req.body);
     return res.status(200).send(response);
   } catch (e) {
     res.status(500).send(err);

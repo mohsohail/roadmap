@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const skill = require('../controllers/skill.controller');
-// endpoint - /api/v1/skill/
+// endpoint - /api/v1/skills/
 
 router.post('/', skill.createSkill);
 router.get('/', skill.getAllSkill);
