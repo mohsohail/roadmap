@@ -7,20 +7,20 @@ import {
 import { processFetchSkills } from '../services/skill.services';
 
 export function fetchSkills() {
-  return async function (dispatch) {
+  return async (dispatch) => {
     dispatch({
       type: FETCH_SKILLS_INIT,
     });
-    const response = processFetchSkills();
-    if (!response.error) {
+    const response = await processFetchSkills();
+    if (!response.err) {
       dispatch({
         type: FETCH_SKILLS_SUCCESS,
-        paylaod: response.data,
+        payload: response.data,
       });
     } else {
       dispatch({
         type: FETCH_SKILLS_FAILURE,
-        paylaod: response.data,
+        payload: response.data,
       });
     }
   };

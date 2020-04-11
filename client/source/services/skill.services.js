@@ -8,9 +8,9 @@ export const processFetchSkills = async () => {
     headers: {},
   };
   const response = await callAPI(request);
-  if (!response.error) {
+  if (!response.err) {
     return response;
   } else {
-    return { error: true };
+    return { err: true };
   }
 };
