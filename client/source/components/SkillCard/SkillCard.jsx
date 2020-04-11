@@ -1,13 +1,13 @@
 import React from 'react';
 import './SkillCard.scss';
 
-const SkillCard = ({ name }) => {
+const SkillCard = ({ data }) => {
   return (
     <div className="card-wrapper">
       <div className="card-well">
-        <div>{name}</div>
-        <div>body</div>
-        <div>footer</div>
+        <div>Skill: {data.skillName}</div>
+        <div>Sessions: {data.sessions}</div>
+        <div>Current Session: {data.currentSession}</div>
       </div>
     </div>
   );

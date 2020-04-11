@@ -13,18 +13,16 @@ class SkillPage extends Component {
     this.props.fetchSkills();
   };
   render() {
+    console.log('##', this.props.skillsData);
     return (
-      <div>
-        <Skill {...this.props} />
-      </div>
+      <div>{this.props.skillsData.status == 2 && <Skill skillsData={this.props.skillsData} />}</div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
   return {
-    skills: state.skill.skillsData,
+    skillsData: state.skill.skillsData,
   };
 };
 

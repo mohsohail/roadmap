@@ -9,18 +9,19 @@ class Skill extends Component {
     this.state = {};
   }
   render() {
+    const { skillsData } = this.props;
+    if (!skillsData) {
+      return null;
+    }
     return (
       <>
         <div>
           <Top></Top>
         </div>
         <>
-          <div>
-            <SkillCard name={'react'} />
-          </div>
-          <div>
-            <SkillCard name={'redux'} />
-          </div>
+          {skillsData.data.map((skill) => (
+            <SkillCard key={skill._id} data={skill} />
+          ))}
         </>
       </>
     );
