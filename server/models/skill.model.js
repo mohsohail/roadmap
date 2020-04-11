@@ -15,11 +15,11 @@ const SkillSchema = new Schema({
     required: true,
   },
   endDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   currentDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   createdAt: {
