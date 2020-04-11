@@ -1,99 +1,99 @@
-const productRepo = require('../repositories/product.repository');
+const skillRepo = require('../repositories/skill.repository');
 
-const createProduct = async payload => {
+const createSkill = async (payload) => {
   try {
-    let productData = await productRepo.createProduct(payload);
+    let skillData = await skillRepo.createSkill(payload);
     return {
       err: false,
       message: 'success',
       status: 200,
-      data: productData
+      data: skillData,
     };
   } catch (err) {
     return {
       err: true,
       message: 'failed',
-      status: 500
+      status: 500,
     };
   }
 };
 
-const getAllProduct = async () => {
+const getAllSkill = async () => {
   try {
-    let products = await productRepo.getAllProduct();
+    let skills = await skillRepo.getAllSkill();
     return {
       err: false,
       message: 'success',
       status: 200,
-      data: products
+      data: skills,
     };
   } catch (err) {
     return {
       err: true,
       message: 'failed',
-      status: 500
+      status: 500,
     };
   }
 };
 
-const getProduct = async payload => {
+const getSkill = async (payload) => {
   try {
-    let product = await productRepo.getProduct(payload);
+    let skill = await skillRepo.getSkill(payload);
     return {
       err: false,
       message: 'success',
       status: 200,
-      data: product
+      data: skill,
     };
   } catch (err) {
     return {
       err: true,
       message: 'failed',
-      status: 500
+      status: 500,
     };
   }
 };
 
-const updateProduct = async payload => {
+const updateSkill = async (payload) => {
   try {
-    let product = await productRepo.updateProduct(payload);
+    let skill = await skillRepo.updateSkill(payload);
     return {
       err: false,
       message: 'success',
       status: 200,
-      data: product
+      data: skill,
     };
   } catch (err) {
     return {
       err: true,
       message: 'failed',
-      status: 500
+      status: 500,
     };
   }
 };
 
-const deleteProduct = async payload => {
+const deleteSkill = async (payload) => {
   try {
-    let product = await productRepo.deleteProduct(payload);
+    let skill = await skillRepo.deleteSkill(payload);
     return {
       err: false,
       message: 'success',
       status: 200,
-      data: product
+      data: skill,
     };
   } catch (err) {
     return {
       err: true,
       message: 'failed',
-      status: 500
+      status: 500,
     };
   }
 };
 
 module.exports = {
-  createProduct,
-  getAllProduct,
-  getProduct,
-  updateProduct,
-  deleteProduct
+  createSkill,
+  getAllSkill,
+  getSkill,
+  updateSkill,
+  deleteSkill,
 };

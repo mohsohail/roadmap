@@ -8,6 +8,8 @@ class AddSkill extends Component {
       trackerType: 'simple',
       sessions: '',
       endDate: '',
+      currentSession: '',
+      currentDate: '',
     };
   }
 
