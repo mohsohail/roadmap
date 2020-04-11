@@ -42,7 +42,7 @@ class AddSkill extends Component {
     return (
       <div>
         <div>
-          <h2>Add page</h2>
+          <h2>Edit page</h2>
         </div>
         <div>
           <form onSubmit={this.handleSubmit}>
