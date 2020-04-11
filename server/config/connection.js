@@ -12,25 +12,25 @@ mongoose.set('useUnifiedTopology', true);
 
 switch (env) {
   case 'dev':
-    connectionString = `mongodb://localhost:27017/delivery`;
+    connectionString = `mongodb://localhost:27017/roadmap`;
     break;
   case 'staging':
-    connectionString = `mongodb://localhost:27017/delivery`;
+    connectionString = `mongodb://localhost:27017/roadmap`;
     break;
   case 'pre_prod':
-    connectionString = `mongodb://localhost:27017/delivery`;
+    connectionString = `mongodb://localhost:27017/roadmap`;
     break;
   case 'prod':
-    connectionString = `mongodb://localhost:27017/delivery`;
+    connectionString = `mongodb://localhost:27017/roadmap`;
     break;
 }
 
-mongoose.connect(connectionString).catch(e => {
+mongoose.connect(connectionString).catch((e) => {
   console.error({ error: e });
 });
 
 const connection = mongoose.connection;
-connection.on('error', e => {
+connection.on('error', (e) => {
   console.log({ error: e });
 });
 connection.once('open', () => {
