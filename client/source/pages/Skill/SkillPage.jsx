@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import Skill from '../Skill/views/Skill';
-import { dispatchFoo } from '../../actions/foo.actions';
+
+import { fetchSkills } from '../../actions/skill.actions';
 
 class SkillPage extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount = () => {};
-  handleFooClick = () => {
-    this.props.dispatchFoo();
+  componentDidMount = () => {
+    this.props.fetchSkills();
   };
   render() {
     return (
@@ -20,12 +21,13 @@ class SkillPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+  console.log('state', state);
   return {
-    foo: state.foo
+    skills: state.skill.skillsData,
   };
 };
 
 export default connect(mapStateToProps, {
-  dispatchFoo
+  fetchSkills,
 })(SkillPage);
