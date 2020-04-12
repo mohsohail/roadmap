@@ -13,7 +13,6 @@ class SkillPage extends Component {
     this.props.fetchSkills();
   };
   render() {
-    console.log('##', this.props.skillsData);
     return (
       <div>{this.props.skillsData.status == 2 && <Skill skillsData={this.props.skillsData} />}</div>
     );

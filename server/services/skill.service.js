@@ -12,7 +12,7 @@ const createSkill = async (payload) => {
   } catch (err) {
     return {
       err: true,
-      message: 'failed to fetch data',
+      message: 'failed',
       status: 500,
     };
   }

@@ -27,9 +27,7 @@ const getSkillViaUrl = async ({ urlId }) => {
 const createSkill = async (payload) => {
   try {
     const skillData = new SkillModel(payload);
-    let data = await skillData.save();
-    console.log(data);
-    return data;
+    return await skillData.save();
   } catch (err) {
     throw err;
   }

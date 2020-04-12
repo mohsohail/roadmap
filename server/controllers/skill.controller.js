@@ -2,7 +2,12 @@ const skillService = require('../services/skill.service');
 
 const createSkill = async (req, res) => {
   try {
-    const response = await skillService.createSkill(req.body);
+    let payload = {};
+    payload = { ...req.body };
+    if (payload.trackerType === 'simple') {
+      payload.currentSession = 0;
+    }
+    const response = await skillService.createSkill(payload);
     return res.status(200).send(response);
   } catch (e) {
     res.status(500).send(err);
