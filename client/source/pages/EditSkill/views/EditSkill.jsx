@@ -30,7 +30,7 @@ class EditSkill extends Component {
       formData: {
         ...this.state.formData,
         data: {
-          ...this.state.data,
+          ...this.state.formData.data,
           skillName: event.target.value,
         },
       },
@@ -42,7 +42,7 @@ class EditSkill extends Component {
       formData: {
         ...this.state.formData,
         data: {
-          ...this.state.data,
+          ...this.state.formData.data,
           trackerType: event.target.value,
         },
       },
@@ -54,7 +54,7 @@ class EditSkill extends Component {
       formData: {
         ...this.state.formData,
         data: {
-          ...this.state.data,
+          ...this.state.formData.data,
           sessions: event.target.value,
         },
       },
@@ -66,7 +66,7 @@ class EditSkill extends Component {
       formData: {
         ...this.state.formData,
         data: {
-          ...this.state.data,
+          ...this.state.formData.data,
           endDate: event.target.value,
         },
       },
@@ -76,7 +76,7 @@ class EditSkill extends Component {
   handleSubmit = (event) => {};
 
   render() {
-    if (this.props.skillData.status !== 2) {
+    if (this.props.skillData.status !== 2 && this.state.formData.status !== 2) {
       return null;
     }
     // console.log('render', this.props, this.state);
