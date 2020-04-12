@@ -8,9 +8,17 @@ import {
   ADD_SKILL_INIT,
   ADD_SKILL_SUCCESS,
   ADD_SKILL_FAILURE,
+  UPDATE_SKILL_INIT,
+  UPDATE_SKILL_SUCCESS,
+  UPDATE_SKILL_FAILURE,
 } from '../constants/actions';
 
-import { processFetchSkills, processAddSkill, processFetchSkill } from '../services/skill.services';
+import {
+  processFetchSkills,
+  processAddSkill,
+  processFetchSkill,
+  processUpdateSkill,
+} from '../services/skill.services';
 
 export function fetchSkills() {
   return async (dispatch) => {
@@ -62,6 +70,23 @@ export const fetchSkill = (payload) => async (dispatch) => {
   } else {
     dispatch({
       type: FETCH_SKILL_FAILURE,
+    });
+  }
+};
+
+export const updateSkill = (payload) => async (dispatch) => {
+  dispatch({
+    type: UPDATE_SKILL_INIT,
+  });
+  const response = await processUpdateSkill(payload);
+  if (!response.err) {
+    dispatch({
+      type: UPDATE_SKILL_SUCCESS,
+      payload: response.data,
+    });
+  } else {
+    dispatch({
+      type: UPDATE_SKILL_FAILURE,
     });
   }
 };

@@ -14,7 +14,11 @@ class SkillPage extends Component {
   };
   render() {
     return (
-      <div>{this.props.skillsData.status == 2 && <Skill skillsData={this.props.skillsData} />}</div>
+      <div>
+        {this.props.skillsData.status == 2 && (
+          <Skill skillsData={this.props.skillsData} history={this.props.history} />
+        )}
+      </div>
     );
   }
 }

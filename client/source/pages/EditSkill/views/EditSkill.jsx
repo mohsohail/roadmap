@@ -73,7 +73,11 @@ class EditSkill extends Component {
     });
   };
 
-  handleSubmit = (event) => {};
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let payload = this.state.formData.data;
+    this.props.updateSkill(payload);
+  };
 
   render() {
     if (this.props.skillData.status !== 2 && this.state.formData.status !== 2) {
@@ -121,6 +125,9 @@ class EditSkill extends Component {
                 />
               </div>
             )}
+            <div>
+              <button type="submit">submit</button>
+            </div>
           </form>
         </div>
       </div>

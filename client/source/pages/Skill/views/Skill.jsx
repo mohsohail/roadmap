@@ -20,7 +20,7 @@ class Skill extends Component {
         </div>
         <>
           {skillsData.data.map((skill) => (
-            <SkillCard key={skill._id} data={skill} />
+            <SkillCard history={this.props.history} key={skill._id} data={skill} />
           ))}
         </>
       </>

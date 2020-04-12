@@ -8,6 +8,9 @@ import {
   FETCH_SKILL_INIT,
   FETCH_SKILL_SUCCESS,
   FETCH_SKILL_FAILURE,
+  UPDATE_SKILL_INIT,
+  UPDATE_SKILL_SUCCESS,
+  UPDATE_SKILL_FAILURE,
 } from '../constants/actions';
 
 const initialState = {
@@ -22,6 +25,11 @@ const initialState = {
     data: {},
   },
   skillData: {
+    status: 0,
+    message: '',
+    data: {},
+  },
+  updateSkillData: {
     status: 0,
     message: '',
     data: {},
@@ -106,6 +114,33 @@ export default function (state = initialState, action) {
       return {
         ...state,
         skillData: {
+          status: 3,
+          message: 'failure',
+          data: action.payload,
+        },
+      };
+    case UPDATE_SKILL_INIT:
+      return {
+        ...state,
+        updateSkillData: {
+          status: 1,
+          message: 'init',
+          data: {},
+        },
+      };
+    case UPDATE_SKILL_SUCCESS:
+      return {
+        ...state,
+        updateSkillData: {
+          status: 2,
+          message: 'success',
+          data: action.payload,
+        },
+      };
+    case UPDATE_SKILL_FAILURE:
+      return {
+        ...state,
+        updateSkillData: {
           status: 3,
           message: 'failure',
           data: action.payload,

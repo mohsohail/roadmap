@@ -33,14 +33,9 @@ const createSkill = async (payload) => {
   }
 };
 
-const updateSkill = async ({ skillId }) => {
+const updateSkill = async (payload) => {
   try {
-    return await SkillModel.update(
-      { _id: skillId },
-      {
-        $set: {},
-      }
-    );
+    return await SkillModel.findOneAndUpdate({ _id: payload._id }, payload, { new: true });
   } catch (e) {
     throw e;
   }
