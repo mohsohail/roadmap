@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class EditSkill extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('getderived props state', nextProps.skillData, prevState);
+    // console.log('getderived props state', nextProps.skillData, prevState);
     if (
       nextProps.skillData.status !== prevState.formData.status &&
       nextProps.skillData.status === 2
@@ -18,11 +18,11 @@ class EditSkill extends Component {
     this.state = {
       formData: props.skillData,
     };
-    console.log('state', this.state);
+    // console.log('state', this.state);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('cDU', prevProps, prevState);
+    // console.log('cDU', prevProps, prevState);
   }
 
   handleSkillChange = (event) => {
@@ -79,7 +79,7 @@ class EditSkill extends Component {
     if (this.props.skillData.status !== 2) {
       return null;
     }
-    console.log('render', this.props, this.state);
+    // console.log('render', this.props, this.state);
     const { skillName, trackerType, sessions, endDate } = this.state.formData.data;
     return (
       <div>
