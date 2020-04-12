@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import EditSkill from './views/EditSkill';
-import { dispatchFoo } from '../../actions/foo.actions';
+
+import { fetchSkill } from '../../actions/skill.actions';
 
 class EditSkillPage extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount = () => {};
-  handleFooClick = () => {
-    this.props.dispatchFoo();
-  };
+  componentDidMount() {
+    const { match } = this.props;
+    this.props.fetchSkill({ id: match.params.id });
+  }
   render() {
     return (
       <div>
-        <EditSkill {...this.props} />
+        <EditSkill skillData={this.props.skillData} {...this.props} />
       </div>
     );
   }
@@ -22,10 +24,10 @@ class EditSkillPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    foo: state.foo,
+    skillData: state.skill.skillData,
   };
 };
 
 export default connect(mapStateToProps, {
-  dispatchFoo,
+  fetchSkill,
 })(EditSkillPage);
