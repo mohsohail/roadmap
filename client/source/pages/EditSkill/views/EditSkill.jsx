@@ -1,46 +1,86 @@
 import React, { Component } from 'react';
 
 class EditSkill extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('getderived props state', nextProps.skillData, prevState);
+    if (
+      nextProps.skillData.status !== prevState.formData.status &&
+      nextProps.skillData.status === 2
+    ) {
+      return {
+        formData: nextProps.skillData,
+      };
+    }
+    return null;
+  }
   constructor(props) {
     super(props);
     this.state = {
-      skillName: '',
-      trackerType: 'simple',
-      sessions: '',
-      endDate: '',
-      currentSession: '',
-      currentDate: '',
+      formData: props.skillData,
     };
+    console.log('state', this.state);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('cDU', prevProps, prevState);
   }
 
   handleSkillChange = (event) => {
     this.setState({
-      skillName: event.target.value,
+      formData: {
+        ...this.state.formData,
+        data: {
+          ...this.state.data,
+          skillName: event.target.value,
+        },
+      },
     });
   };
 
   handleTrackerChange = (event) => {
     this.setState({
-      trackerType: event.target.value,
+      formData: {
+        ...this.state.formData,
+        data: {
+          ...this.state.data,
+          trackerType: event.target.value,
+        },
+      },
     });
   };
 
   handleSessionsChange = (event) => {
     this.setState({
-      sessions: event.target.value,
+      formData: {
+        ...this.state.formData,
+        data: {
+          ...this.state.data,
+          sessions: event.target.value,
+        },
+      },
     });
   };
 
   handleEndDateChange = (event) => {
     this.setState({
-      endDate: event.target.value,
+      formData: {
+        ...this.state.formData,
+        data: {
+          ...this.state.data,
+          endDate: event.target.value,
+        },
+      },
     });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = (event) => {};
 
   render() {
-    const { skillName, trackerType, sessions, endDate } = this.state;
+    if (this.props.skillData.status !== 2) {
+      return null;
+    }
+    console.log('render', this.props, this.state);
+    const { skillName, trackerType, sessions, endDate } = this.state.formData.data;
     return (
       <div>
         <div>
