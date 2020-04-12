@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import AddSkill from './views/AddSkill';
-import { dispatchFoo } from '../../actions/foo.actions';
+
+import { addSkillAction } from '../../actions/skill.actions';
 
 class AddSkillPage extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount = () => {};
-  handleFooClick = () => {
-    this.props.dispatchFoo();
+  handleAddSkill = (formData) => {
+    this.props.addSkillAction(formData);
   };
   render() {
     return (
       <div>
-        <AddSkill {...this.props} />
+        <AddSkill handleAddSkill={this.handleAddSkill} {...this.props} />
       </div>
     );
   }
@@ -27,5 +29,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  dispatchFoo,
+  addSkillAction,
 })(AddSkillPage);

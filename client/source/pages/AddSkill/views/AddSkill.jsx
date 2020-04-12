@@ -4,41 +4,59 @@ class AddSkill extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      skillName: '',
-      trackerType: 'simple',
-      sessions: '',
-      endDate: '',
+      formData: {
+        skillName: '',
+        trackerType: 'simple',
+        sessions: '',
+        endDate: '',
+      },
     };
   }
 
   handleSkillChange = (event) => {
     this.setState({
-      skillName: event.target.value,
+      formData: {
+        ...this.state.formData,
+        skillName: event.target.value,
+      },
     });
   };
 
   handleTrackerChange = (event) => {
     this.setState({
-      trackerType: event.target.value,
+      formData: {
+        ...this.state.formData,
+        trackerType: event.target.value,
+      },
     });
   };
 
   handleSessionsChange = (event) => {
     this.setState({
-      sessions: event.target.value,
+      formData: {
+        ...this.state.formData,
+        sessions: event.target.value,
+      },
     });
   };
 
   handleEndDateChange = (event) => {
     this.setState({
-      endDate: event.target.value,
+      formData: {
+        ...this.state.formData,
+        endDate: event.target.value,
+      },
     });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = (event) => {
+    const { formData } = this.state;
+    this.props.handleAddSkill(formData);
+    event.preventDefault();
+  };
 
   render() {
-    const { skillName, trackerType, sessions, endDate } = this.state;
+    const { skillName, trackerType, sessions, endDate } = this.state.formData;
     return (
       <div>
         <div>
@@ -79,6 +97,9 @@ class AddSkill extends Component {
                 />
               </div>
             )}
+            <div>
+              <button type="submit">create</button>
+            </div>
           </form>
         </div>
       </div>
