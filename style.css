@@ -1,0 +1,22 @@
+body {
+  font-size: 14px;
+}
+.flex-body {
+  display: flex;
+}
+.bold {
+  font-weight: bold;
+}
+
+.m-left-10 {
+  margin-left: 10px;
+}
+.m-left-20 {
+  margin-left: 20px;
+}
+.m-right-20 {
+}
+.m-top-20 {
+}
+.m-bottom-20 {
+}
