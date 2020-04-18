@@ -1,3 +1,3 @@
-# react-get-started
+# weekly habit tracker
 
-react starter kit
+Lets you track the tasks on a weekly basis. More customizations coming soon!
