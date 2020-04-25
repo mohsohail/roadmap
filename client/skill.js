@@ -25,9 +25,6 @@ function appendChild(parent, el) {
         let template = `<div class="panel"><div class="panel-head"><h1>header</h1></div><div class="panel-body flex-body"><div class="skill-name bold">${item.skillName}</div><div class="skill-tracker flex-body m-left-20"><div class="done m-left-10">done</div></div></div></div>`;
 
         body.insertAdjacentHTML('beforeend', template);
-
-        let foo = document.querySelector('panel-body');
-        console.log(foo);
       });
     })
     .catch((err) => console.log(err));
