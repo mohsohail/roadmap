@@ -15,6 +15,7 @@ const createSkill = async (req, res) => {
 };
 
 const getAllSkill = async (req, res) => {
+  console.log('comes');
   try {
     const response = await skillService.getAllSkill();
     return res.status(200).send(response);
